@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buh One</title>
+    <link rel="stylesheet" href="assets/scss/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container header_container">
+        <h1 class="header_title">Where in the world?</h1>
+        <button class="header_button" id="darkModeToggle">
+          <img src="./assets/images/quarter-moon.svg" alt="dark-mode" />
+          Dark Mode
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container main_container">
+        <div class="main_container_search">
+          <input
+            type="text"
+            class="main_container_search_input"
+            placeholder="Search for a country…"
+          />
+          <div class="main_container_search_region">
+            <button
+              class="main_container_search_region_choicebutton"
+              id="choiceButton"
+            >
+              <img src="./assets/images/choice.svg" alt="choice" />Filter by
+              Region
+            </button>
+            <ul class="main_container_search_region_choicemenu" id="choicemenu">
+              <li class="region-item">Africa</li>
+              <li class="region-item">America</li>
+              <li class="region-item">Asia</li>
+              <li class="region-item">Europe</li>
+              <li class="region-item">Oceania</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="photos">
+          <div class="photos_flag">
+            <img
+              src="./assets/images/germany.svg"
+              alt="germany"
+              width="264"
+              height="160"
+            />
+            <h2>Germany</h2>
+            <ul>
+              <li><span>Population:</span>81,770,900</li>
+              <li><span>Region:</span> Europe</li>
+              <li><span>Capital:</span>Berlin</li>
+            </ul>
+          </div>
+          <div class="photos_flag">
+            <img
+              src="./assets/images/usa.jpg"
+              alt="USA"
+              width="264"
+              height="160"
+            />
+            <h2>United States of America</h2>
+            <ul>
+              <li><span>Population:</span> 323,947,000</li>
+              <li><span>Region:</span> Americas</li>
+              <li><span>Capital:</span> Washington, D.C.</li>
+            </ul>
+          </div>
+          <div class="photos_flag">
+            <img
+              src="./assets/images/brazil.jpg"
+              alt="Brazil"
+              width="264"
+              height="160"
+            />
+            <h2>Brazil</h2>
+            <ul>
+              <li><span>Population:</span> 206,135,893</li>
+              <li><span>Region:</span> Americas</li>
+              <li><span>Capital:</span>Brasília</li>
+            </ul>
+          </div>
+          <div class="photos_flag">
+            <img
+              src="./assets/images/iceland.png"
+              alt="Iceland"
+              width="264"
+              height="160"
+            />
+            <h2>Iceland</h2>
+            <ul>
+              <li><span>Population:</span> 334,300</li>
+              <li><span>Region:</span> Europe</li>
+              <li><span>Capital:</span>Reykjavík</li>
+            </ul>
+          </div>
+          <div class="photos_flag">
+            <img
+              src="./assets/images/afghanistan.png"
+              alt="Afghanistan"
+              width="264"
+              height="160"
+            />
+            <h2>Afghanistan</h2>
+            <ul>
+              <li><span>Population:</span>27,657,145</li>
+              <li><span>Region:</span>Asia</li>
+              <li><span>Capital:</span>Kabul</li>
+            </ul>
+          </div>
+          <div class="photos_flag">
+            <img
+              src="./assets/images/aland-islands.svg"
+              alt="Åland-Islands"
+              width="264"
+              height="160"
+            />
+            <h2>Åland Islands</h2>
+            <ul>
+              <li><span>Population:</span>28,875</li>
+              <li><span>Region:</span>Europe</li>
+              <li><span>Capital:</span>Mariehamn</li>
+            </ul>
+          </div>
+          <div class="photos_flag">
+            <img
+              src="./assets/images/albania.png"
+              alt="Albania"
+              width="264"
+              height="160"
+            />
+            <h2>Albania</h2>
+            <ul>
+              <li><span>Population:</span>2,886,026</li>
+              <li><span>Region:</span>Europe</li>
+              <li><span>Capital:</span>Tirana</li>
+            </ul>
+          </div>
+          <div class="photos_flag">
+            <img
+              src="./assets/images/algeria.png"
+              alt="Algeria"
+              width="264"
+              height="160"
+            />
+            <h2>Algeria</h2>
+            <ul>
+              <li><span>Population:</span>40,400,000</li>
+              <li><span>Region:</span>Africa</li>
+              <li><span>Capital:</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      const choiceButton = document.getElementById("choiceButton");
+      const choiceMenu = document.getElementById("choicemenu");
+
+      choiceButton.addEventListener("click", () => {
+        choiceMenu.style.display =
+          choiceMenu.style.display === "block" ? "none" : "block";
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!choiceButton.contains(event.target)) {
+          choiceMenu.style.display = "none";
+        }
+      });
+
+      const darkModeToggle = document.getElementById("darkModeToggle");
+      darkModeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+      });
+    </script>
+  </body>
+</html>
